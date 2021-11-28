@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DADM_21-22_parejaA_P3</string>
+    <string name="title_activity_main">Videojuego matamarcianos</string>
+    <string name="subtitle_activity_main">DADM</string>
+    <string name="hello_world">Hello</string>
+    <string name="pause">- PAUSE -</string>
+    <string name="pauseInfo">The game is paused right now,\nwhat do you want to do captain?</string>
+    <string name="btn_resume">RESUME GAME</string>
+    <string name="btn_levels">LEVELS MENU</string>
+    <string name="btn_exit">EXIT GAME</string>
+    <string name="start">Start game</string>
+    <string name="game_title">¡Matamarcianos!</string>
+    <string name="pause_dialog_title">pause title</string>
+    <string name="pause_dialog_message">pause message</string>
+    <string name="resume">resume</string>
+    <string name="stop">stop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
