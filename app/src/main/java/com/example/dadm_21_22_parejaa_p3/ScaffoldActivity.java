@@ -19,6 +19,8 @@ public class ScaffoldActivity extends AppCompatActivity {
 
     private SoundManager soundManager;
 
+    private boolean result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +41,23 @@ public class ScaffoldActivity extends AppCompatActivity {
 
     public void startGame() {
         // Navigate the the game fragment, which makes the start automatically
+        soundManager.changeTheme(1);
         navigateToFragment(new GameFragment());
     }
 
-    public void resultGame() {
+    public void resultGame(boolean newResult) {
         // Navigate the the game fragment, which makes the start automatically
+        result = newResult;
         navigateToFragment(new ResultFragment());
     }
 
     public void exitGame() {
         // Navigate the the game fragment, which makes the start automatically
         navigateToFragment(new MainMenuFragment());
+    }
+
+    public boolean getResult(){
+        return result;
     }
 
     private void navigateToFragment(BaseFragment dst) {

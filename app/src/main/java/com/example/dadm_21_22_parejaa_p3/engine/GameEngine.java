@@ -200,11 +200,14 @@ public class GameEngine {
     public void increaseScore(int increase){
         score += increase;
         if(score > 100){
-            ((ScaffoldActivity)mainActivity).resultGame();
+            ((ScaffoldActivity)mainActivity).resultGame(true);
         }
     }
 
     public void setHealth(int newHealth){
         health = newHealth;
+        if(health < 1){
+            ((ScaffoldActivity)mainActivity).resultGame(false);
+        }
     }
 }

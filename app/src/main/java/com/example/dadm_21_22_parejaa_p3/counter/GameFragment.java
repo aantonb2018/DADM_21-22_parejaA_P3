@@ -83,7 +83,7 @@ public class GameFragment extends BaseFragment implements View.OnClickListener {
             theGameEngine.stopGame();
             ((ScaffoldActivity)getActivity()).navigateBack();
         }else if(v.getId() == R.id.btn_levels){
-            ((ScaffoldActivity)getActivity()).resultGame();
+            //((ScaffoldActivity)getActivity()).resultGame();
         }
     }
 

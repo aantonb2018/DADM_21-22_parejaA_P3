@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.example.dadm_21_22_parejaa_p3.BaseFragment;
 import com.example.dadm_21_22_parejaa_p3.R;
@@ -27,8 +28,18 @@ public class ResultFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        super.onViewCreated(view, savedInstanceState);//result_title
         view.findViewById(R.id.btn_resultExit).setOnClickListener(this);
+        TextView titulo = (TextView) view.findViewById(R.id.result_title);
+        TextView info = (TextView) view.findViewById(R.id.result_info);
+        if(((ScaffoldActivity)getActivity()).getResult()){
+            titulo.setText("VICTORY");
+            info.setText("A total success! Great job on this mission, captain!");
+        }else{
+            titulo.setText("LOSE");
+            info.setText("Mission failed... We will get them next time, captain!");
+        }
+
     }
 
     @Override

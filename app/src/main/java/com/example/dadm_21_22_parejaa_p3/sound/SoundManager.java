@@ -14,13 +14,16 @@ import java.util.HashMap;
 public final class SoundManager {
 
 	private static final int MAX_STREAMS = 10;
-	private static final float DEFAULT_MUSIC_VOLUME = 0.6f;
+	private static final float DEFAULT_MUSIC_VOLUME = 0.4f;
 
 	private HashMap<GameEvent, Integer> soundsMap;
 	
 	private Context context;
 	private SoundPool soundPool;
 	private MediaPlayer bgPlayer;
+
+	private String themes[] = {"sfx/bgm_menu.mp3", "sfx/bgm_levelone.mp3", "sfx/bgm_leveltwo.mp3", "sfx/bgm_victory.mp3", "sfx/bgm_lose.mp3"};
+	private int themeSelect = 0;
 
 	public SoundManager(Context context) {
 		this.context = context;
@@ -50,16 +53,16 @@ public final class SoundManager {
 	private void loadSounds() {
 		createSoundPool();
 		soundsMap = new HashMap<GameEvent, Integer>();
-		loadEventSound(context, GameEvent.AsteroidHit, "Asteroid_explosion_1.wav");
-		loadEventSound(context, GameEvent.SpaceshipHit, "Spaceship_explosion.wav");
-		loadEventSound(context, GameEvent.LaserFired, "Laser_shoot.wav");
+		loadEventSound(context, GameEvent.AsteroidHit, "sfx_boom.wav");
+		loadEventSound(context, GameEvent.SpaceshipHit, "sfx_hit.wav");
+		loadEventSound(context, GameEvent.LaserFired, "sfx_blaster.wav");
 	}
 
 	private void loadMusic() {
 		try {
 			// Important to not reuse it. It can be on a strange state
 			bgPlayer = new MediaPlayer();
-			AssetFileDescriptor afd = context.getAssets().openFd("sfx/Riccardo_Colombo_-_11_-_Something_mental.mp3");
+			AssetFileDescriptor afd = context.getAssets().openFd(themes[themeSelect]);
 			bgPlayer.setDataSource(afd.getFileDescriptor(),
 					afd.getStartOffset(), afd.getLength());
 			bgPlayer.setLooping(true);
@@ -97,5 +100,11 @@ public final class SoundManager {
 	private void unloadMusic() {
 		bgPlayer.stop();
 		bgPlayer.release();
+	}
+
+	public void changeTheme(int newTheme){
+		themeSelect = newTheme;
+		unloadMusic();
+		loadMusic();
 	}
 }
