@@ -41,7 +41,7 @@ public class GameEngine {
     public int score = 0;
     public int health;
 
-    private Activity mainActivity;
+    public Activity mainActivity;
 
     public GameEngine(Activity activity, GameView gameView) {
         mainActivity = activity;
@@ -58,7 +58,7 @@ public class GameEngine {
 
         quadTree.setArea(new Rect(0, 0, width, height));
 
-        this.pixelFactor = this.height / 400d;
+        this.pixelFactor = this.height / 500d;
     }
 
     public void setTheInputController(InputController inputController) {

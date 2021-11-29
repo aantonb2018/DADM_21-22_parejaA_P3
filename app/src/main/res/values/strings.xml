@@ -1,19 +1,33 @@
 <resources>
     <string name="app_name">DADM_21-22_parejaA_P3</string>
-    <string name="title_activity_main">Videojuego matamarcianos</string>
-    <string name="subtitle_activity_main">DADM</string>
+    <string name="title_activity_main">Galactic Defenders</string>
+    <string name="subtitle_activity_main">Milky \u0020 Way\'s \u0020 destiny \u0020 is \u0020 in \u0020 your \u0020 hands \u0020 captain...</string>
     <string name="hello_world">Hello</string>
     <string name="pause">- PAUSE -</string>
-    <string name="pauseInfo">The game is paused right now,\nwhat do you want to do captain?</string>
+    <string name="pauseInfo">The \u0020 game \u0020 is \u0020 paused \u0020 right \u0020 now,\nwhat \u0020 do \u0020 you \u0020 want \u0020 to \u0020 do \u0020 captain?</string>
     <string name="btn_resume">RESUME GAME</string>
     <string name="btn_levels">LEVELS MENU</string>
     <string name="btn_exit">EXIT GAME</string>
     <string name="start">Start game</string>
-    <string name="game_title">¡Matamarcianos!</string>
+    <string name="game_title">\u0020GALACTIC\nDEFENDERS</string>
+    <string name="game_insert">INSERT \u0020 TOUCH</string>
     <string name="pause_dialog_title">pause title</string>
     <string name="pause_dialog_message">pause message</string>
     <string name="resume">resume</string>
     <string name="stop">stop</string>
+    <string name="victory_title">stop</string>
+    <string name="victory_info">A \u0020 total \u0020 success! \u0020 Great \u0020 job \u0020 on \nthis \u0020 mission, \u0020 captain!</string>
+    <string name="lose_title">stop</string>
+    <string name="lose_info">Mission \u0020 failed... \u0020 We \u0020 will \u0020 get \nthem \u0020 next \u0020 time, \u0020 captain!</string>
+    <string name="story_title">the \u0020 story \n \u0020 so \u0020 far...</string>
+    <string name="story_info">Year \u0020 2137. \u0020 humanity \u0020 has \u0020 been \u0020 defending \u0020 itself \n from \u0020 the \u0020 Orbitas\' \u0020 attack \u0020 for \u0020 20 \u0020 years. \n This \u0020 intergalactic \u0020 race \u0020 forced \n all \u0020 terrestrial \u0020 governments \u0020 to \u0020 unite \n into \u0020 one, \u0020 the \u0020 Confederacy \n of \u0020 Pangea. \u0020 All \u0020 humanity \u0020 united \u0020 as \u0020 brothers \n face \u0020 without \u0020 break \u0020 before \u0020 their \u0020 invaders, \n led \u0020 by \u0020 the \u0020 brave \u0020 and \u0020 cunning \u0020 Captain \u0020 Nightingate. \n And \u0020 now, \u0020 this \u0020 galactic \u0020 war \u0020 is \u0020 about \n to \u0020 come \u0020 to \u0020 an \u0020 end...</string>
+    <string name="btn_goback">Go \u0020 back</string>
+    <string name="btn_story">Read \u0020 story</string>
+    <string name="ship_title">choose \u0020 a \u0020 ship</string>
+    <string name="btn_ship">ships</string>
+    <string name="ship_a">Inter-Price</string>
+    <string name="ship_b">X-Feather</string>
+    <string name="ship_c">Apellon-XIII</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

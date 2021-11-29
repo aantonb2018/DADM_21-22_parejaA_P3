@@ -1,6 +1,7 @@
 package com.example.dadm_21_22_parejaa_p3;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.os.Build;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.view.View;
 import com.example.dadm_21_22_parejaa_p3.counter.GameFragment;
 import com.example.dadm_21_22_parejaa_p3.counter.MainMenuFragment;
 import com.example.dadm_21_22_parejaa_p3.counter.ResultFragment;
+import com.example.dadm_21_22_parejaa_p3.counter.ShipFragment;
+import com.example.dadm_21_22_parejaa_p3.counter.StoryFragment;
 import com.example.dadm_21_22_parejaa_p3.sound.SoundManager;
 
 public class ScaffoldActivity extends AppCompatActivity {
@@ -20,6 +23,8 @@ public class ScaffoldActivity extends AppCompatActivity {
     private SoundManager soundManager;
 
     private boolean result;
+
+    private int selectedShip = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +50,53 @@ public class ScaffoldActivity extends AppCompatActivity {
         navigateToFragment(new GameFragment());
     }
 
+    public void startStory() {
+        // Navigate the the game fragment, which makes the start automatically
+        navigateToFragment(new StoryFragment());
+    }
+
+    public void startShip() {
+        // Navigate the the game fragment, which makes the start automatically
+        navigateToFragment(new ShipFragment());
+    }
+
     public void resultGame(boolean newResult) {
         // Navigate the the game fragment, which makes the start automatically
         result = newResult;
+        if(result){
+            soundManager.changeTheme(3);
+        }else{
+            soundManager.changeTheme(4);
+        }
         navigateToFragment(new ResultFragment());
     }
 
     public void exitGame() {
         // Navigate the the game fragment, which makes the start automatically
+        soundManager.changeTheme(0);
         navigateToFragment(new MainMenuFragment());
     }
 
     public boolean getResult(){
         return result;
+    }
+
+    public void setSelectedShip(int ship){
+        selectedShip = ship;
+    }
+
+    public int getSelectedShip(){
+        return selectedShip;
+    }
+
+    public void onPause() {
+        super.onPause();
+        soundManager.pauseMusic();
+    }
+
+    public void onResume() {
+        super.onResume();
+        soundManager.resumeMusic();
     }
 
     private void navigateToFragment(BaseFragment dst) {

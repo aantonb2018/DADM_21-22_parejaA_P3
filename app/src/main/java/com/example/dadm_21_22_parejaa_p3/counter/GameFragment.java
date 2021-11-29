@@ -28,6 +28,7 @@ import com.example.dadm_21_22_parejaa_p3.space.SpaceShipPlayer;
 public class GameFragment extends BaseFragment implements View.OnClickListener {
     private GameEngine theGameEngine;
     private ConstraintLayout cL;
+    private Button pause;
 
     public GameFragment() {
     }
@@ -42,7 +43,8 @@ public class GameFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.btn_play_pause).setOnClickListener(this);
+        pause = (Button) view.findViewById(R.id.btn_play_pause);
+        pause.setOnClickListener(this);
         view.findViewById(R.id.btn_levels).setOnClickListener(this);
         view.findViewById(R.id.btn_resume).setOnClickListener(this);
         view.findViewById(R.id.btn_exit).setOnClickListener(this);
@@ -75,10 +77,12 @@ public class GameFragment extends BaseFragment implements View.OnClickListener {
         if (v.getId() == R.id.btn_play_pause) {
             theGameEngine.pauseGame();
             cL.setVisibility(View.VISIBLE);
+            pause.setVisibility(View.GONE);
             //pauseGameAndShowPauseDialog();
         }else if(v.getId() == R.id.btn_resume){
             theGameEngine.resumeGame();
             cL.setVisibility(View.GONE);
+            pause.setVisibility(View.VISIBLE);
         }else if(v.getId() == R.id.btn_exit){
             theGameEngine.stopGame();
             ((ScaffoldActivity)getActivity()).navigateBack();

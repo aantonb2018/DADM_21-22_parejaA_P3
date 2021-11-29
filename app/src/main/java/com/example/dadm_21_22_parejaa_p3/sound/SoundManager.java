@@ -25,6 +25,8 @@ public final class SoundManager {
 	private String themes[] = {"sfx/bgm_menu.mp3", "sfx/bgm_levelone.mp3", "sfx/bgm_leveltwo.mp3", "sfx/bgm_victory.mp3", "sfx/bgm_lose.mp3"};
 	private int themeSelect = 0;
 
+	private int length;
+
 	public SoundManager(Context context) {
 		this.context = context;
 		loadSounds();
@@ -45,7 +47,7 @@ public final class SoundManager {
 		Integer soundId = soundsMap.get(event);
 		if (soundId != null) {
 			// Left Volume, Right Volume, priority (0 == lowest), loop (0 == no) and rate (1.0 normal playback rate)
-			System.out.println("Sonido");
+			//System.out.println("Sonido");
 			soundPool.play(soundId, 1.0f, 1.0f, 0, 0, 1.0f);
 		}
 	}
@@ -106,5 +108,15 @@ public final class SoundManager {
 		themeSelect = newTheme;
 		unloadMusic();
 		loadMusic();
+	}
+
+	public void pauseMusic(){
+		bgPlayer.pause();
+		length = bgPlayer.getCurrentPosition();
+	}
+
+	public void resumeMusic(){
+		bgPlayer.start();
+		bgPlayer.seekTo(length);
 	}
 }

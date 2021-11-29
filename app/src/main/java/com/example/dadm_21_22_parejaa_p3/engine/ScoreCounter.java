@@ -3,6 +3,9 @@ package com.example.dadm_21_22_parejaa_p3.engine;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
+
+import com.example.dadm_21_22_parejaa_p3.ScaffoldActivity;
 
 
 public class ScoreCounter extends GameObject{
@@ -37,7 +40,7 @@ public class ScoreCounter extends GameObject{
         if (totalMillis > 1000) {
             framesPerSecond = draws * 1000 / totalMillis;
             scoreText = gameEngine.score + " pts";
-            healthText = "Health: " + gameEngine.health;
+            healthText = "Lifes: " + gameEngine.health;
             totalMillis = 0;
             draws = 0;
         }
@@ -45,9 +48,9 @@ public class ScoreCounter extends GameObject{
 
     @Override
     public void onDraw(Canvas canvas) {
-        paint.setColor(Color.BLACK);
-        canvas.drawRect((int) (canvas.getWidth() - textWidth), (int) (canvas.getHeight() - textHeight), canvas.getWidth(), canvas.getHeight(), paint);
-        canvas.drawRect(0, (int) (canvas.getHeight() - textHeight), textWidth, canvas.getHeight(), paint);
+        //paint.setColor(Color.BLACK);
+        //canvas.drawRect((int) (canvas.getWidth() - textWidth), (int) (canvas.getHeight() - textHeight), canvas.getWidth(), canvas.getHeight(), paint);
+        //canvas.drawRect(0, (int) (canvas.getHeight() - textHeight), textWidth, canvas.getHeight(), paint);
         paint.setColor(Color.WHITE);
         canvas.drawText(scoreText, (int) (canvas.getWidth() - textWidth / 2), (int) (canvas.getHeight() - textHeight / 2), paint);
         canvas.drawText(healthText, textWidth / 2, (int) (canvas.getHeight() - textHeight / 2), paint);

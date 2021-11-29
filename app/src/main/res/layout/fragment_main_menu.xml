@@ -10,26 +10,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin2"
         android:text="@string/game_title"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/arcadeclassic"
+        android:textSize="64sp" />
 
-    <Button
-        android:id="@+id/btn_start"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#000000"
-        android:text="@string/start" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/start"
+            android:textColor="#000000"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/blank_menu8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/btn_ship"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/btn_ship"
+            android:textColor="#000000"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/blank_menu1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/btn_story"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/btn_story"
+            android:textColor="#000000"
+            android:textSize="32sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/GameSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginTop="@dimen/activity_vertical_margin2"
+        android:layout_marginTop="@dimen/activity_vertical_margin3"
         android:text="@string/subtitle_activity_main"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/arcadeclassic"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/text_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="@dimen/activity_vertical_margin4"
+        android:text="@string/game_insert"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/arcadeclassic"
+        android:textSize="32sp" />
 
 </FrameLayout>

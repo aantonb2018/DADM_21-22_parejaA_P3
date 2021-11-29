@@ -34,11 +34,15 @@ public class ResultFragment extends BaseFragment implements View.OnClickListener
         TextView info = (TextView) view.findViewById(R.id.result_info);
         if(((ScaffoldActivity)getActivity()).getResult()){
             titulo.setText("VICTORY");
-            info.setText("A total success! Great job on this mission, captain!");
+            info.setText(R.string.victory_info);
         }else{
             titulo.setText("LOSE");
-            info.setText("Mission failed... We will get them next time, captain!");
+            info.setText(R.string.lose_info);
         }
+
+        Animation titleAnimation = AnimationUtils.loadAnimation(getActivity(),
+                R.anim.subtitle_enter);
+        view.findViewById(R.id.result_layout).startAnimation(titleAnimation);
 
     }
 

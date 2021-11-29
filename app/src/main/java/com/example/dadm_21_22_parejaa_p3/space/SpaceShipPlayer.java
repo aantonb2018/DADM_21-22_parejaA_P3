@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.dadm_21_22_parejaa_p3.R;
+import com.example.dadm_21_22_parejaa_p3.ScaffoldActivity;
 import com.example.dadm_21_22_parejaa_p3.engine.GameEngine;
 import com.example.dadm_21_22_parejaa_p3.engine.ScreenGameObject;
 import com.example.dadm_21_22_parejaa_p3.engine.Sprite;
@@ -28,16 +29,33 @@ public class SpaceShipPlayer extends Sprite {
     private double speedFactor;
     private int health;
 
+    private int currentShip;
 
     public SpaceShipPlayer(GameEngine gameEngine){
         super(gameEngine, R.drawable.interprise_a);
-        nextResourceIntegerId = R.drawable.interprise_b;
-        speedFactor = pixelFactor * 100d / 1000d; // We want to move at 100px per second on a 400px tall screen
+        currentShip = ((ScaffoldActivity)gameEngine.mainActivity).getSelectedShip();
+        switch(currentShip){
+            case 0:
+                nextResourceIntegerId = R.drawable.interprise_b;
+                health = 3;
+                speedFactor = pixelFactor * 100d / 1000d;
+                break;
+            case 1:
+                nextResourceIntegerId = R.drawable.xfeather_b;
+                health = 2;
+                speedFactor = (pixelFactor * 100d / 1000d)*1.3;
+                break;
+            case 2:
+                nextResourceIntegerId = R.drawable.apellonxiii_b;
+                health = 4;
+                speedFactor = (pixelFactor * 100d / 1000d)*0.4;
+                break;
+        }
+         // We want to move at 100px per second on a 400px tall screen
         maxX = gameEngine.width - width;
         maxY = gameEngine.height - height;
-        health = 3;
-        gameEngine.setHealth(health);
 
+        gameEngine.setHealth(health);
         initBulletPool(gameEngine);
     }
 
@@ -118,6 +136,24 @@ public class SpaceShipPlayer extends Sprite {
             }
             //gameEngine.stopGame();
             gameEngine.onGameEvent(GameEvent.SpaceshipHit);
+        }else if (otherObject instanceof Hunter) {
+            Hunter h = (Hunter) otherObject;
+            h.removeObject(gameEngine);
+            health--;
+            gameEngine.setHealth(health);
+            if(health < 1){
+                gameEngine.removeGameObject(this);
+            }
+            //gameEngine.stopGame();
+            gameEngine.onGameEvent(GameEvent.SpaceshipHit);
+        }else if (otherObject instanceof Bomb) {
+            health--;
+            gameEngine.setHealth(health);
+            if(health < 1){
+                gameEngine.removeGameObject(this);
+            }
+            //gameEngine.stopGame();
+            gameEngine.onGameEvent(GameEvent.SpaceshipHit);
         }
     }
 
@@ -127,10 +163,28 @@ public class SpaceShipPlayer extends Sprite {
             if (time > lastFrameChangeTime + frameLengthInMillisecond) {
                 lastFrameChangeTime = time;
                 super.setBitmap(nextResourceIntegerId);
-                if (nextResourceIntegerId == R.drawable.interprise_a) {
-                    nextResourceIntegerId = R.drawable.interprise_b;
-                } else {
-                    nextResourceIntegerId = R.drawable.interprise_a;
+                switch (currentShip){
+                    case 0:
+                        if (nextResourceIntegerId == R.drawable.interprise_a) {
+                            nextResourceIntegerId = R.drawable.interprise_b;
+                        } else {
+                            nextResourceIntegerId = R.drawable.interprise_a;
+                        }
+                        break;
+                    case 1:
+                        if (nextResourceIntegerId == R.drawable.xfeather_a) {
+                            nextResourceIntegerId = R.drawable.xfeather_b;
+                        } else {
+                            nextResourceIntegerId = R.drawable.xfeather_a;
+                        }
+                        break;
+                    case 2:
+                        if (nextResourceIntegerId == R.drawable.apellonxiii_a) {
+                            nextResourceIntegerId = R.drawable.apellonxiii_b;
+                        } else {
+                            nextResourceIntegerId = R.drawable.apellonxiii_a;
+                        }
+                        break;
                 }
             }
         super.onDraw(canvas);

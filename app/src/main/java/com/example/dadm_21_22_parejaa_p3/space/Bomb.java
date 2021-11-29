@@ -8,16 +8,19 @@ import com.example.dadm_21_22_parejaa_p3.engine.ScreenGameObject;
 import com.example.dadm_21_22_parejaa_p3.engine.Sprite;
 import com.example.dadm_21_22_parejaa_p3.sound.GameEvent;
 
-public class Bullet extends Sprite {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Bomb extends Sprite {
 
     private double speedFactor;
 
-    private SpaceShipPlayer parent;
+    private Hunter parent;
 
-    public Bullet(GameEngine gameEngine){
-        super(gameEngine, R.drawable.blaster_one);
+    public Bomb(GameEngine gameEngine){
+        super(gameEngine, R.drawable.bomb_one);
 
-        speedFactor = gameEngine.pixelFactor * -300d / 1000d;
+        speedFactor = (gameEngine.pixelFactor * -300d / 1000d);
     }
 
     @Override
@@ -34,10 +37,10 @@ public class Bullet extends Sprite {
     }
 
 
-    public void init(SpaceShipPlayer parentPlayer, double initPositionX, double initPositionY) {
+    public void init(Hunter parentHunter, double initPositionX, double initPositionY) {
         positionX = initPositionX - width/2;
         positionY = initPositionY - height/2;
-        parent = parentPlayer;
+        parent = parentHunter;
     }
 
     private void removeObject(GameEngine gameEngine) {
@@ -48,25 +51,11 @@ public class Bullet extends Sprite {
 
     @Override
     public void onCollision(GameEngine gameEngine, ScreenGameObject otherObject) {
-        if (otherObject instanceof Asteroid) {
+        if (otherObject instanceof Bullet) {
             // Remove both from the game (and return them to their pools)
-            System.out.println(gameEngine.score);
-            gameEngine.increaseScore(((Asteroid) otherObject).getPoints());
             removeObject(gameEngine);
-            Asteroid a = (Asteroid) otherObject;
-            a.removeObject(gameEngine);
-            gameEngine.onGameEvent(GameEvent.AsteroidHit);
             // Add some score
-        }else if(otherObject instanceof Hunter) {
-            // Remove both from the game (and return them to their pools)
-            System.out.println(gameEngine.score);
-            gameEngine.increaseScore(((Hunter) otherObject).getPoints());
-            removeObject(gameEngine);
-            Hunter h = (Hunter) otherObject;
-            h.removeObject(gameEngine);
-            gameEngine.onGameEvent(GameEvent.AsteroidHit);
-            // Add some score
-        }else if(otherObject instanceof Bomb) {
+        }else if (otherObject instanceof SpaceShipPlayer) {
             // Remove both from the game (and return them to their pools)
             removeObject(gameEngine);
             // Add some score

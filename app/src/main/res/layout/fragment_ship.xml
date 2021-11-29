@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".counter.ShipFragment">
+
+
+    <LinearLayout
+        android:id="@+id/ship_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ship_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/ship_title"
+            android:textColor="#FFFFFF"
+            android:textSize="64sp" />
+
+        <TextView
+            android:id="@+id/blank_ship_0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/btn_interprise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/interprise_btn"
+            android:layout_gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/text_interprise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/ship_a"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/blank_ship_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/btn_xfeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xfeather_btn"
+            android:layout_gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/text_xfeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/ship_b"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/blank_ship_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/btn_apellonxiii"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/apollenxiii_btn"
+            android:layout_gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/text_apellonxii"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/ship_c"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/blank_ship_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/btn_gobackship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/arcadeclassic"
+            android:text="@string/btn_goback"
+            android:textColor="#000000"
+            android:textSize="32sp" />
+
+    </LinearLayout>
+</FrameLayout>
