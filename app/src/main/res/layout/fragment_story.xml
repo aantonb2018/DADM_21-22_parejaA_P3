@@ -25,6 +25,7 @@
             android:id="@+id/blank_story0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:text="TextView" />
 
         <TextView
@@ -42,6 +43,7 @@
             android:id="@+id/blank_story1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:text="TextView" />
 
         <Button
