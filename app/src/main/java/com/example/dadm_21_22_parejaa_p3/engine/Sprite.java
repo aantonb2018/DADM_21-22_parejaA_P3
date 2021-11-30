@@ -51,8 +51,8 @@ public abstract class Sprite extends ScreenGameObject {
         matrix.postScale((float) pixelFactor, (float) pixelFactor);
         matrix.postTranslate((float) positionX, (float) positionY);
         matrix.postRotate((float) rotation, (float) (positionX + width/2), (float) (positionY + height/2));
-        pX.setColor(Color.YELLOW);
-        canvas.drawRect(mBoundingRect.left, mBoundingRect.top, mBoundingRect.right, mBoundingRect.bottom, pX);
+        //pX.setColor(Color.YELLOW);
+        //canvas.drawRect(mBoundingRect.left, mBoundingRect.top, mBoundingRect.right, mBoundingRect.bottom, pX);
         canvas.drawBitmap(bitmap, matrix, null);
     }
 

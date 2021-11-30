@@ -70,25 +70,6 @@
                     android:text="TextView" />
 
                 <Button
-                    android:id="@+id/btn_resultLevels"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="@string/btn_levels"
-                    android:fontFamily="@font/arcadeclassic"
-                    android:textSize="32sp"
-                    android:textColor="#000000"/>
-
-                <TextView
-                    android:id="@+id/blank_d"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="#000000"
-                    android:text="TextView" />
-
-                <Button
                     android:id="@+id/btn_resultExit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
