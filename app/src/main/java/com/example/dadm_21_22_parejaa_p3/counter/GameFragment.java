@@ -45,7 +45,6 @@ public class GameFragment extends BaseFragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
         pause = (Button) view.findViewById(R.id.btn_play_pause);
         pause.setOnClickListener(this);
-        view.findViewById(R.id.btn_levels).setOnClickListener(this);
         view.findViewById(R.id.btn_resume).setOnClickListener(this);
         view.findViewById(R.id.btn_exit).setOnClickListener(this);
         cL = view.findViewById(R.id.pause_layout);
@@ -85,9 +84,7 @@ public class GameFragment extends BaseFragment implements View.OnClickListener {
             pause.setVisibility(View.VISIBLE);
         }else if(v.getId() == R.id.btn_exit){
             theGameEngine.stopGame();
-            ((ScaffoldActivity)getActivity()).navigateBack();
-        }else if(v.getId() == R.id.btn_levels){
-            //((ScaffoldActivity)getActivity()).resultGame();
+            ((ScaffoldActivity)getActivity()).exitGame();
         }
     }
 

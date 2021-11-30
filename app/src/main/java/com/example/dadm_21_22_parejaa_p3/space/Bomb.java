@@ -29,7 +29,8 @@ public class Bomb extends Sprite {
     @Override
     public void onUpdate(long elapsedMillis, GameEngine gameEngine) {
         positionY -= speedFactor * elapsedMillis;
-        if (positionY < -height) {
+        if (positionY > gameEngine.height) {
+            System.out.println("Me autodetruyo");
             gameEngine.removeGameObject(this);
             // And return it to the pool
             parent.releaseBullet(this);

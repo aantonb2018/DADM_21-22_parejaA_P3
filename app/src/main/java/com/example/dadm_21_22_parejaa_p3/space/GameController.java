@@ -11,7 +11,7 @@ import com.example.dadm_21_22_parejaa_p3.engine.GameObject;
 
 public class GameController extends GameObject {
 
-    private static final int TIME_BETWEEN_ENEMIES = 500;
+    private static final int TIME_BETWEEN_ENEMIES = 1000;
     private long currentMillis;
     private List<Asteroid> asteroidPool = new ArrayList<Asteroid>();
     private List<Hunter> hunterPool = new ArrayList<Hunter>();
