@@ -199,7 +199,7 @@ public class GameEngine {
 
     public void increaseScore(int increase){
         score += increase;
-        if(score > 100){
+        if(score > 150){
             ((ScaffoldActivity)mainActivity).resultGame(true);
         }
     }
